@@ -1,7 +1,7 @@
 const Discord = require('discord.js')
 const fs = require('fs')
 const logger = require("./Config/logger");
-const token = require("./Config/token.js").token;
+const token = require("./token.js").token;
 const client = new Discord.Client()
 
 client.login(token).then(logger.log('Bot On', 'log'))
