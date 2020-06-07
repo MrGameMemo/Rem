@@ -3,8 +3,8 @@ const fs = require('fs')
 const logger = require("./Config/logger");
 const token = require("./token.js").token;
 const client = new Discord.Client()
-
-
+const mysql = require('mysql');
+const db = require('./Config/db.js')
 
 
 client.login(token).then(logger.log('Bot On', 'log'))
@@ -36,3 +36,15 @@ fs.readdir('./Events/', (error, f) => {
             client.on(event, events.bind(null, client));
         });
 });
+
+client.con = mysql.createConnection({
+    host : db.host,
+    user: db.user,
+    password: db.password,
+    database: db.name
+})
+
+client.con.connect(err => {
+    if(err) throw err;
+    console.log('Connecté à la db')
+})
