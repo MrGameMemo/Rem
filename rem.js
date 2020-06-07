@@ -5,7 +5,7 @@ const token = require("./token.js").token;
 const client = new Discord.Client()
 const mysql = require('mysql');
 const db = require('./Config/db.js')
-
+let lang = require('./lang/en');
 
 client.login(token).then(logger.log('Bot On', 'log'))
 
@@ -50,5 +50,20 @@ client.con.connect(err => {
 })
 
 client.on('guildCreate', guild => {
-    client.con.query(`INSERT INTO guild (id, prefix) VALUES ('${guild.id}', 'r!')`)
+    client.con.query(`INSERT INTO guild (id, prefix, lang) VALUES ('${guild.id}', 'r!', en)`)
+})
+
+client.on('message', message => {
+    client.con.query(`SELECT lang FROM guild WHERE id=${message.guild.id}`,  (err, rows) => {
+    
+        console.log(rows[0].lang)
+    
+        if(rows[0].lang === 'fr') {
+            client.lang = require('./lang/fr');
+        } 
+        else if(rows[0].lang === 'en') {
+            client.lang = require('./lang/en');
+        }
+    
+    })
 })

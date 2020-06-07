@@ -26,8 +26,11 @@ module.exports = (client, message) => {
         let commande = args.shift();
         let cmd = client.commands.get(commande);
 
-        cooldown.add(message.author.id)
-        if (!cmd) { return; }
+        if (cmd) { 
             cmd.run(client, message, args);
+            cooldown.add(message.author.id);
+        }else {
+            return; 
+        }
     });
 };
