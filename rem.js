@@ -48,3 +48,7 @@ client.con.connect(err => {
     if(err) throw err;
     console.log('Connecté à la db')
 })
+
+client.on('guildCreate', guild => {
+    client.con.query(`INSERT INTO guild (id, prefix) VALUES ('${guild.id}', 'r!')`)
+})

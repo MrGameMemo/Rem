@@ -1,9 +1,14 @@
 const Discord = require('discord.js');
-const SQL = require('mysql')
-const prefix = 'r!';
+const mysql = require('mysql')
 let cooldown = new Set();
 
+
 module.exports = (client, message) => {
+    client.con.query(`SELECT prefix FROM guild WHERE id=${message.guild.id}`, (err, rows) => {
+    const prefix = rows[0].prefix;
+
+    console.log(rows[0].prefix)
+        
     let cdseconds = client.cooldown;
     if (message.author.bot || message.channel.type === 'dm') { return; }
     if (!message.channel.permissionsFor(client.user).has('SEND_MESSAGES')) { return; }
@@ -24,4 +29,5 @@ module.exports = (client, message) => {
         cooldown.add(message.author.id)
         if (!cmd) { return; }
             cmd.run(client, message, args);
+    });
 };
