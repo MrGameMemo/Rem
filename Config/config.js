@@ -14,4 +14,5 @@ module.exports = {
             url: "https://twitch.tv/PseudoIllyes"
         }
     ],
+    fullLog: true,
 }

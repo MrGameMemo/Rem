@@ -1,5 +1,5 @@
 const { bgBlue, black, green } = require("chalk");
-const { fullLog } = require("./config.json");
+const { fullLog } = require("./config.js").fullLog;
 
 function dateTimePad(value, digits) {
     let number = String(value);
