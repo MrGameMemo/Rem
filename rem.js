@@ -4,10 +4,12 @@ const logger = require("./Config/logger");
 const token = require("./token.js").token;
 const client = new Discord.Client()
 
+
+
+
 client.login(token).then(logger.log('Bot On', 'log'))
 
 client.commands = new Discord.Collection();
-
 
 fs.readdir('./Commands/', (error, f) => {
     if (error) { return console.error(error); }
@@ -18,6 +20,7 @@ fs.readdir('./Commands/', (error, f) => {
             let commande = require(`./Commands/${f}`);
             logger.log(`ALL | ${f} commande chargée !`, 'info');
             client.commands.set(commande.help.name, commande);
+            client.cooldown = commande.help.cooldown;
         });
 });
 
