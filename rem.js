@@ -56,7 +56,7 @@ client.on('guildCreate', guild => {
 client.on('message', message => {
     client.con.query(`SELECT lang FROM guild WHERE id=${message.guild.id}`,  (err, rows) => {
     
-        console.log(rows[0].lang)
+        //console.log(rows[0].lang)
     
         if(rows[0].lang === 'fr') {
             client.lang = require('./lang/fr');

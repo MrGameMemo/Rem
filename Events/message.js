@@ -7,7 +7,7 @@ module.exports = (client, message) => {
     client.con.query(`SELECT prefix FROM guild WHERE id=${message.guild.id}`, (err, rows) => {
     const prefix = rows[0].prefix;
 
-    console.log(rows[0].prefix)
+    //console.log(rows[0].prefix)
         
     let cdseconds = client.cooldown;
     if (message.author.bot || message.channel.type === 'dm') { return; }
