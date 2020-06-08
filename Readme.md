@@ -1,5 +1,5 @@
 # Rem bot
-[![Discord](https://discord.com/api/guilds/708688488815525911/widget.png?style=shield](https://discord.gg/eF5UVPS)
+[![GitHub release](https://img.shields.io/github/release/PseudoIllyes/Rem)](https://GitHub.com/PseudoIllyes/Rem/releases/)
 
 🤖 A multifunction discord bot
 
