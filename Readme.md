@@ -6,4 +6,9 @@
 
 ## Features
 
-### Commands
+### Functionality
+
+- 🏳 Multi language
+- 💾 Open-Source !
+- ❗ Custom Prefix
+- ❔ Good Support
