@@ -11,4 +11,4 @@
 - 🏳 Multi language
 - 💾 Open-Source !
 - ❗ Custom Prefix
-- ❔ Good Support
+- ❔ Support
