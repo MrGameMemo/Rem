@@ -4,9 +4,18 @@ module.exports.run = (client, message, args) => {
     if (!message.guild.member(message.author).hasPermission('ADMINISTRATOR')) { return message.channel.send(client.lang.permUser); }
     if(!args[0]) return message.channel.send(client.lang.setLangArgs)
 
-    client.con.query(`UPDATE guild SET lang='${args[0]}' WHERE id='${message.guild.id}'`)
+    client.con.query(`SELECT lang FROM admin`,  (err, rows) => {
+        console.log(rows[0].lang)
+        if(rows[0].lang === args[0]){
+            client.con.query(`UPDATE guild SET lang='${args[0]}' WHERE id='${message.guild.id}'`)
 
-    message.channel.send(client.lang.setLang + args[0])
+            message.channel.send(client.lang.setLang + args[0])
+        }
+        else{
+            message.channel.send(client.lang.setLangErrorA)
+            return;
+        }
+    })
 }
 
 module.exports.help = {
