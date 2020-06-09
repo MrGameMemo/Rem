@@ -20,5 +20,5 @@ module.exports.run = (client, message, args) => {
 
 module.exports.help = {
     name: "set-lang",
-    cooldown: 25
+    cooldown: 60
 }
