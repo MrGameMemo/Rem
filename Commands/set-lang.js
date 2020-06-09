@@ -5,7 +5,7 @@ module.exports.run = (client, message, args) => {
     if(!args[0]) return message.channel.send(client.lang.setLangArgs)
 
     client.con.query(`SELECT lang FROM admin`,  (err, rows) => {
-        console.log(rows[0].lang)
+        console.log(rows.some(i => i.lang === args[0]))
         if(rows.some(i => i.lang === args[0])){
             client.con.query(`UPDATE guild SET lang='${args[0]}' WHERE id='${message.guild.id}'`)
 
