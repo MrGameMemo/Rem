@@ -7,5 +7,5 @@ module.exports.run = (client, message, args) => {
 
 module.exports.help = {
     name: "invite",
-    cooldown: 6
+    cooldown: 0
 }
