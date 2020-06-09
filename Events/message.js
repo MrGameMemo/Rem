@@ -2,11 +2,10 @@ const Discord = require('discord.js');
 const mysql = require('mysql')
 let cooldown = new Set();
 const fs = require('fs')
-
+const owner = require('../Config/owner')
 
 
 module.exports = (client, message) => {
-
 
 
     client.con.query(`SELECT prefix FROM guild WHERE id=${message.guild.id}`, (err, rows) => {
@@ -34,11 +33,18 @@ module.exports = (client, message) => {
 
             cdseconds = cmd.help.cooldown
 
-            cooldown.add(message.author.id);
+            
+            if(message.author.id === owner.id){
+                return;
+            }
+            else {
+                cooldown.add(message.author.id);
 
-            setTimeout(() => {
-                cooldown.delete(message.author.id)
-            }, cdseconds*1000)
+
+                setTimeout(() => {
+                    cooldown.delete(message.author.id)
+                }, cdseconds*1000)
+            }
         }else {
             return; 
         }

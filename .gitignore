@@ -6,3 +6,6 @@ token.js
 
 # Database 
 db.js
+
+# Owner File
+owner.js
