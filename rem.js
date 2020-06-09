@@ -20,7 +20,6 @@ fs.readdir('./Commands/', (error, f) => {
             let commande = require(`./Commands/${f}`);
             logger.log(`ALL | ${f} commande chargée !`, 'info');
             client.commands.set(commande.help.name, commande);
-            client.cooldown = commande.help.cooldown;
         });
 });
 
