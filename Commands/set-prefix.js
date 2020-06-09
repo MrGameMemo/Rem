@@ -11,5 +11,5 @@ module.exports.run = (client, message, args) => {
 
 module.exports.help = {
     name: "set-prefix",
-    cooldown: 5
+    cooldown: 20
 }
