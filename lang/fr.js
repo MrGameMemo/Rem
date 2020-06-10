@@ -88,4 +88,10 @@ module.exports = {
     
     amvCommand: 'Vous voulez rejoindre une communauté d\'amv maker ? Voici ton entrée : https://discord.gg/wztgwev !',
 
+    /* Config */
+        /* Général */
+        configTW: 'Configuration',
+        welcomeTitle: '➕ Message d\'accueil',
+        goodByeTitle: '➖ Message d\'au revoir',
+
 }
