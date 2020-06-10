@@ -7,10 +7,10 @@ module.exports = {
     setPrefix: '`[Succcès ✅] Nouveau préfix :` ',
     setPreixArgs: '`[Erreur ❌] Veillez me donner le nouveau prefix !`',
     /*Github Command*/
-    githubC: 'Voici mon github : https://github.com/PseudoIllyes/Rem',
+    githubC: 'Voici où est mon code : https://github.com/PseudoIllyes/Rem',
     
     /*Set-lang Command*/
-    setLangArgs: '`[Erreur ❌] Veuillez spécifier le langage voulu`',
+    setLangArgs: '`[Erreur ❌] Veuillez spécifier la langue voulu`',
     setLang: '`[Succcès ✅] La langue du bot à été changé pour :` ',
     setLangErrorA: '`[Erreur ❌] Ce language n\'est pas disponible !`',
 
