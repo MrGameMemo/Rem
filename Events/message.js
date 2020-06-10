@@ -26,7 +26,7 @@ module.exports = (client, message) => {
     if (!message.content.startsWith(prefix)) { return; }
 
         let args = message.content.slice(prefix.length).trim().split(/ +/g);
-        let commande = args.shift();
+        let commande = args.shift().toLowerCase();
         let cmd = client.commands.get(commande);
 
         if (cmd) { 
