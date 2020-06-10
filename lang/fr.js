@@ -7,7 +7,7 @@ module.exports = {
     setPrefix: '`[Succcès ✅] Nouveau préfix :` ',
     setPreixArgs: '`[Erreur ❌] Veillez me donner le nouveau prefix !`',
     /*Github Command*/
-    githubC: 'Voici ou est mon code : https://github.com/PseudoIllyes/Rem',
+    githubC: 'Voici où est mon code : https://github.com/PseudoIllyes/Rem',
     
     /*Set-lang Command*/
     setLangArgs: '`[Erreur ❌] Veuillez spécifier la langue voulu`',
