@@ -1,7 +1,6 @@
 const Discord = require ('discord.js');
 const owner = require('../Config/owner')
 module.exports.run = (client, message, args) => {
-  //if (message.author.id !== owner.id){return message.channel.send(client.lang.notOwner);}
   const filter = m => m.author.id === message.author.id
 
   const collector = message.channel.createMessageCollector(filter, { max: 1, time: 15000 });
