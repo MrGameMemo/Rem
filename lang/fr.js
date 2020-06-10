@@ -84,4 +84,8 @@ module.exports = {
         /* ALL */
         waifuTimeOuted : '`[Succcès ✅] Opération Terminé`',
 
+    /* AMV */
+    
+    amvCommand: 'Vous voulez rejoindre une communauté d\'amv maker ? Voici ton entrée : https://discord.gg/wztgwev !',
+
 }
