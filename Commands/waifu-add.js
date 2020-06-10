@@ -2,7 +2,7 @@ const Discord = require ('discord.js');
 
 module.exports.run = (client, message, args) => {
   const filter = m => m.author.id === message.author.id
-  const collector = message.channel.createMessageCollector(filter, { max: 1, time: 15000 });
+  const collector = message.channel.createMessageCollector(filter, { max: 1});
   message.channel.send(client.lang.waifuAddWelc)
   
   collector.on('collect', m => {

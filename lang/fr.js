@@ -28,7 +28,8 @@ module.exports = {
             waifuListAut: '💙 Liste des waifu',
 
         /*Add*/
-            waifuAddWelc: 'Bienvenue, pour commencer , veuillez me fournir le nom de la waifu que vous souhaiteriez ajouter (Expire dans 10 secondes)',
+            waifuAddWelc: 'Bienvenue, pour commencer , veuillez me fournir le nom de la waifu que vous souhaiteriez ajouter',
+            waifuAddExist: '`[Erreur ❌] Cette waifu existe déjà !`*(ou est en vérification)*',
 
         /* Verif */
 
@@ -43,15 +44,44 @@ module.exports = {
 
         /* Info */
 
-            waifuInfoArgs: '`[Erreur ❌] Veuillez spécifier sur quel waifu voudriez vous des infos`',
+            waifuInfoArgs: '`[Erreur ❌] Veuillez spécifier sur quel waifu voudriez vous des infos (',
             waifuInfoName: 'Nom',
             waifuInfoVote: 'Votes',
             waifuInfoAnime: 'Anime dans le quel elle est présente',
             waifuInfoDesc: 'Description',
             waifuInfoArgsNotF: '`[Erreur ❌] Cette waifu n\'est pas recensé dans notre base de donnée (vous voulez la voir, faites : ',
 
+        /* Delete */
+            waifuDeleteWelc: 'Bienvenue, pour commencer, quel est la waifu que vous shouaitez supprimer ?',
+            waifuDeleteNotexist: '`[Erreur ❌] Cette waifu n\'est pas recensé dans notre base de donnée`',
+
+        /* Config */
+
+        waifuConfigW: 'Bienvenue, pour configurer / changer les informations d\'une waifu, veuillez me fournir son nom',
+        waifuConfigNotCreate: '`[Erreur ❌] Cette waifu n\'est pas recensé dans notre base de donnée !`',
+        waifuConfigStep2: '`[Succcès ✅] La waifu à bien été trouvé, maitenant, que voulez vous modifier / configurer ? (Nom, Description, Photo, Anime)`',
+            
+            /* Name */
+            waifuConfigName: 'Nom',
+            waifuConfigNameFirst: '`[Succcès ✅] Option séléctionné : Nom, Maintenant quel nom voulez vous ?`',
+            waifuConfigNameSeg:'`[Succcès ✅] Le nom à bien été changé !`',
+
+            /* Desc */
+            waifuConfigDesc: 'Description',
+            waifuConfigDescFirst: '`[Succcès ✅] Option séléctionné : Description, Maintenant quel description voulez vous ?`',
+            waifuConfigDescSeg:'`[Succcès ✅] La description à bien été changé !`',
+
+            /* Photo */
+            waifuConfigPhoto: 'Photo',
+            waifuConfigPhotoFirst: '`[Succcès ✅] Option séléctionné : Photo, Maintenant quel photo voulez vous ?`',
+            waifuConfigPhotoSeg:'`[Succcès ✅] La photo à bien été changé !`',
+
+            /* Anime */
+            waifuConfigAnime: 'Anime',
+            waifuConfigAnimeFirst: '`[Succcès ✅] Option séléctionné : Anime, Maintenant dans quel anime apparait cette waifu ?`',
+            waifuConfigAnimeSeg:'`[Succcès ✅] L\'anime à bien été changé !`',
 
         /* ALL */
-        waifuTimeOuted : '`[Succcès ✅] Opération Terminé (ou temps écoulé)`',
+        waifuTimeOuted : '`[Succcès ✅] Opération Terminé`',
 
 }

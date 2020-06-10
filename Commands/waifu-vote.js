@@ -3,7 +3,7 @@ const owner = require('../Config/owner')
 module.exports.run = (client, message, args) => {
   const filter = m => m.author.id === message.author.id
 
-  const collector = message.channel.createMessageCollector(filter, { max: 1, time: 15000 });
+  const collector = message.channel.createMessageCollector(filter, { max: 1});
 
   client.con.query(`SELECT * FROM waifu WHERE checked = 'yes'`, (err, rows) => {
 
