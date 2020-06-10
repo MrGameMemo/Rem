@@ -24,7 +24,7 @@ module.exports = {
 
             waifuListName: 'Nom : ',
             waifuListVote: 'Vote : ',
-            waifuListError: '`[Erreur ❌] Aucune waifu enregistrée dans notre base de donné`',
+            waifuListError: '`[Erreur ❌] Aucune waifu enregistrée dans notre base de donnée`',
             waifuListAut: '💙 Liste des waifu',
 
         /*Add*/
@@ -40,6 +40,16 @@ module.exports = {
 
             waifuVoteW: 'Voici la liste des waifu disponible, vous voter entrer le nom d\'une d\'entre elle',
             waifuVoteSuccess: '`[Succcès ✅] Vote enregistré`',
+
+        /* Info */
+
+            waifuInfoArgs: '`[Erreur ❌] Veuillez spécifier sur quel waifu voudriez vous des infos`',
+            waifuInfoName: 'Nom',
+            waifuInfoVote: 'Votes',
+            waifuInfoAnime: 'Anime dans le quel elle est présente',
+            waifuInfoDesc: 'Description',
+            waifuInfoArgsNotF: '`[Erreur ❌] Cette waifu n\'est pas recensé dans notre base de donnée (vous voulez la voir, faites : ',
+
 
         /* ALL */
         waifuTimeOuted : '`[Succcès ✅] Opération Terminé (ou temps écoulé)`',
