@@ -94,4 +94,9 @@ module.exports = {
         welcomeTitle: '➕ Message d\'accueil',
         goodByeTitle: '➖ Message d\'au revoir',
 
+        /* Welcome */
+        configWelcomeStepOne: 'Bienvenue {user}, pour commencer, quand quel channel voulez vous avoir le message de bienvenue ?',
+        configWelcomeStepTwo: 'Très bien, le salon de bienvenue est maintenant {channel}, pour continuer donner moi quel message voudriez vous. \n({user} = l\'utilisateur), Exemple : Bienvenue {user} !',
+        configWelcomeFinal: '`[Succcès ✅] L\'option de bienvenue à bien été activé et configurer ! Pour tester faites {prefix}welcome`',
+
 }
