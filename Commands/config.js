@@ -6,6 +6,8 @@ module.exports.run = (client, message, args) => {
 
     if (!message.guild.member(message.author).hasPermission('ADMINISTRATOR')) { return message.channel.send(client.lang.permUser); }
 
+    const filter = m => m.author.id === message.author.id
+
     client.con.query(`SELECT prefix from guild WHERE id='${message.guild.id}' `, (err, rows) => {
         prefix = rows[0].prefix;
     })
@@ -24,10 +26,9 @@ module.exports.run = (client, message, args) => {
 
     switch(args[0]){
         case 'welcome' :
-            const filter = m => m.author.id === message.author.id
-            const collector = message.channel.createMessageCollector(filter, { max: 1});
+            const collectorWelc = message.channel.createMessageCollector(filter, { max: 1});
             message.channel.send(client.lang.configWelcomeStepOne.replace(/{user}/g, `${message.author}`))
-            collector.on('collect', m => {
+            collectorWelc.on('collect', m => {
                 client.con.query(`UPDATE guild SET welcomeC='${m.content}' WHERE id='${message.guild.id}'`)
                 client.con.query(`SELECT welcomeC FROM guild WHERE id='${message.guild.id}'`, (err, rows) => {
                     //console.log(rows[0].welcomeC)
@@ -39,6 +40,25 @@ module.exports.run = (client, message, args) => {
                 collector.on('collect', m => {
                     client.con.query(`UPDATE guild SET welcomeMsg='${m.content}' WHERE id='${message.guild.id}'`)
                     message.channel.send(client.lang.configWelcomeFinal.replace(/{prefix}/g, `${prefix}`))
+                })
+            })
+            
+        break;
+
+        case 'goodbye' :
+            const collectorBye = message.channel.createMessageCollector(filter, { max: 1});
+            message.channel.send(client.lang.configGoodbyeStepOne.replace(/{user}/g, `${message.author}`))
+            collectorBye.on('collect', m => {
+                client.con.query(`UPDATE guild SET goodByeC='${m.content}' WHERE id='${message.guild.id}'`)
+                client.con.query(`SELECT goodByeC FROM guild WHERE id='${message.guild.id}'`, (err, rows) => {
+                    channelGoodbye = rows[0].goodByeC;
+                    message.channel.send(client.lang.configGoodbyeStepTwo.replace(/{channel}/g, `${channelGoodbye}`))
+                })
+                const filter = m => m.author.id === message.author.id
+                const collector = message.channel.createMessageCollector(filter, { max: 1});
+                collector.on('collect', m => {
+                    client.con.query(`UPDATE guild SET goodByeMsg='${m.content}' WHERE id='${message.guild.id}'`)
+                    message.channel.send(client.lang.configGoodbyeFinal.replace(/{prefix}/g, `${prefix}`))
                 })
             })
             

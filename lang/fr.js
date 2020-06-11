@@ -86,7 +86,7 @@ module.exports = {
 
     /* AMV */
     
-    amvCommand: 'Vous voulez rejoindre une communauté d\'amv maker ? Voici ton entrée : https://discord.gg/wztgwev !',
+    amvCommand: 'Vous voulez rejoindre une communauté de passioné d\'amv ? Voici ton entrée : https://discord.gg/wztgwev !',
 
     /* Config */
         /* Général */
@@ -98,5 +98,11 @@ module.exports = {
         configWelcomeStepOne: 'Bienvenue {user}, pour commencer, quand quel channel voulez vous avoir le message de bienvenue ?',
         configWelcomeStepTwo: 'Très bien, le salon de bienvenue est maintenant {channel}, pour continuer donner moi quel message voudriez vous. \n({user} = l\'utilisateur |{count} = le nombre d\'utilisateur sur le serveur) \nExemple : Bienvenue {user}, nous sommes maintenant {count} !',
         configWelcomeFinal: '`[Succcès ✅] L\'option de bienvenue à bien été activé et configurer ! Pour tester faites {prefix}welcome`',
+
+        /* Goodbye */
+
+        configGoodbyeStepOne: 'Bienvenue {user}, pour commencer, quand quel channel voulez vous avoir le message d\'au revoir ?',
+        configGoodbyeStepTwo: 'Très bien, le salon d\'au revoir est maintenant {channel}, pour continuer donner moi quel message voudriez vous. \n({user} = l\'utilisateur |{count} = le nombre d\'utilisateur sur le serveur) \nExemple : {user} nous à quitté, nous sommes maintenant {count} !',
+        configGoodbyeFinal: '`[Succcès ✅] L\'option d\'au revoir à bien été activé et configurer ! Pour tester faites {prefix}goodbye`',
 
 }
