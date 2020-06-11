@@ -13,7 +13,17 @@ module.exports = async (client, member, args) => {
         wChannel = wChannel.replace(/>/g, '');
         wChannel = wChannel.replace(/<#/g, '');
         const channel = member.guild.channels.cache.find(channel => channel.id === wChannel);
-        WMsg = WMsg.replace(/{user}/g, member.user)
+        
+        if (WMsg.includes('{count}') && WMsg.includes('{user}')){
+            WMsg = WMsg.replace(/{count}/g, member.guild.memberCount)
+            WMsg = WMsg.replace(/{user}/g, member.user)
+        }
+        else if(WMsg.includes('{user}')){
+            WMsg = WMsg.replace(/{user}/g, member.user)
+        }else if (WMsg.includes('{count}')) {
+            WMsg = WMsg.replace(/{count}/g, member.guild.memberCount)
+        } 
+        
         channel.send(WMsg)
 
     })
