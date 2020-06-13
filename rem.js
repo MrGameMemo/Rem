@@ -49,13 +49,13 @@ client.con.connect(err => {
 })
 
 client.on('guildCreate', guild => {
-    client.con.query(`INSERT INTO guild (id, prefix, lang) VALUES ('${guild.id}', 'r!', en)`)
+    client.con.query(`INSERT INTO guild (id, prefix, lang) VALUE ('${guild.id}', 'r!', 'en')`)
 })
 
 client.on('message', message => {
-    client.con.query(`SELECT lang FROM guild WHERE id=${message.guild.id}`,  (err, rows) => {
+    client.con.query(`SELECT * FROM guild WHERE id=${message.guild.id}`,  (err, rows) => {
     
-        //console.log(rows[0].lang)
+        //console.log(rows)
     
         if(rows[0].lang === 'fr') {
             client.lang = require('./lang/fr');
@@ -65,4 +65,6 @@ client.on('message', message => {
         }
     
     })
+
+    client.guildID = message.guild.id;
 })

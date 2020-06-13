@@ -4,12 +4,12 @@ let cooldown = new Set();
 const fs = require('fs')
 const owner = require ('../Config/owner')
 
-
 module.exports = (client, message) => {
 
 
     client.con.query(`SELECT prefix FROM guild WHERE id=${message.guild.id}`, (err, rows) => {
     const prefix = rows[0].prefix;
+    message.prefix = prefix;
 
     if (message.content.startsWith(prefix)) { 
         if(cooldown.has(message.author.id)) {

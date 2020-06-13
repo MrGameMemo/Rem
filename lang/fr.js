@@ -1,4 +1,7 @@
 module.exports = {
+    /* Général */
+    undefined: 'Non défini',
+
     /* Permission */
     permUser: '`[Erreur ❌] Vous n\'avez pas la permission `',
     notOwner: '`[Erreur ❌] Vous n\'êtes pas autorisé à faire ceci !`',

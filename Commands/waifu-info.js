@@ -6,7 +6,7 @@ module.exports.run = (client, message, args) => {
         prefix = rows[0].prefix;
     })
 
-    if(!args[0]) return message.channel.send(`${client.lang.waifuInfoArgs}${prefix}waifu-list)\``)
+    if(!args[0]) return message.channel.send(`${client.lang.waifuInfoArgs}${message.prefix}waifu-list)\``)
 
     client.con.query(`SELECT * from waifu WHERE name='${args[0]}' `, (err, rows) => {
 
@@ -26,7 +26,7 @@ module.exports.run = (client, message, args) => {
         console.log(rows)
     }
     else {
-        return message.channel.send(`${client.lang.waifuInfoArgsNotF} ${prefix}waifu-add)\``);
+        return message.channel.send(`${client.lang.waifuInfoArgsNotF} ${message.prefix}waifu-add)\``);
     }
 
     })
