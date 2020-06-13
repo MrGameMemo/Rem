@@ -7,7 +7,7 @@ module.exports.run = (client, message, args) => {
   
   collector.on('collect', m => {
     message.channel.send(`${m.content} est maintenant en vérification ! Merci à toi :))`)
-    client.con.query(`INSERT INTO waifu (name, vote, checked, user, userID) VALUES ('${m.content}','0', 'no', '${message.author.username}', '${message.author.id}')`)
+    client.con.query(`INSERT INTO waifu (name, vote, checked, user, userID, lastName, image, anime, description) VALUES ('${m.content}','0', 'no', '${message.author.username}', '${message.author.id}', '0', '0', '0', '0')`)
   });
   
   collector.on('end', collected => {
