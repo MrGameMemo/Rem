@@ -7,5 +7,6 @@ module.exports.run = (client, message, args) => {
 
 module.exports.help = {
     name: "github",
-    cooldown: 2
+    cooldown: 2,
+    category: 'other',
 }

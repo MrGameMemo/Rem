@@ -108,4 +108,24 @@ module.exports = {
         configGoodbyeStepTwo: 'Très bien, le salon d\'au revoir est maintenant {channel}, pour continuer donner moi quel message voudriez vous. \n({user} = l\'utilisateur |{count} = le nombre d\'utilisateur sur le serveur) \nExemple : {user} nous à quitté, nous sommes maintenant {count} !',
         configGoodbyeFinal: '`[Succcès ✅] L\'option d\'au revoir à bien été activé et configurer ! Pour tester faites {prefix}goodbye`',
 
+
+    /* Help Command */
+        /* Général */
+        helpTitle: '📝 Liste des commandes :',
+
+        /* Modération */
+        modTitle: '👮🏽‍♂️ Modération :',
+
+        /* Waifu */
+        waifuTitle: '💙 Waifu :',
+
+        /* Custom */
+        customTitle: '🔨 Personalisation :',
+
+        /* Fun */
+        funTitle: '😛 Fun :',
+
+        /* Other */
+        otherTitle: '💨 Autre :'
+
 }

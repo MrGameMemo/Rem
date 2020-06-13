@@ -25,5 +25,6 @@ module.exports.run = (client, message, args) => {
 
 module.exports.help = {
     name: "waifu-list",
-    cooldown: 5
+    cooldown: 5,
+    category: 'waifu',
 }

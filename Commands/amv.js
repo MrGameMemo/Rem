@@ -8,5 +8,6 @@ module.exports.run = (client, message, args) => {
 
 module.exports.help = {
     name: "amv",
-    cooldown: 3
+    cooldown: 3,
+    category: 'other',
 }
