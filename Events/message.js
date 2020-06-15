@@ -14,11 +14,11 @@ module.exports = (client, message) => {
     if (message.content.startsWith(prefix)) { 
         if(cooldowns.has(message.author.id, message.content)) {
             const cooldown = cooldowns.get(message.author.id);
-            const remaining = cooldown - Date.now();
+            const remaining = (cooldown - Date.now()) / 1000;
             const content = cooldowns.get(message.content);
             if(content === message.content){
             message.delete;
-            const msg = client.lang.cooldown.replace(/{cds}/g, `\`${humanizeDuration(remaining, { language: "fr" })}\``)
+            const msg = client.lang.cooldown.replace(/{cds}/g, `\`${Number.parseFloat(remaining).toFixed(0)}\``)
             message.reply(`${msg}`);
             return;
             }
