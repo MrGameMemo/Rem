@@ -1,6 +1,7 @@
 module.exports = {
     /* Général */
     undefined: 'Non défini',
+    cooldown: 'Veuillez patienter {cds} secondes !',
 
     /* Permission */
     permUser: '`[Erreur ❌] Vous n\'avez pas la permission `',
@@ -126,6 +127,24 @@ module.exports = {
         funTitle: '😛 Fun :',
 
         /* Other */
-        otherTitle: '💨 Autre :'
+        otherTitle: '💨 Autre :',
+
+    /* Bot info */
+        /* Général */
+        botInfoTitle: '🤖 Information du bot :',
+
+        /* Version */
+        botVersion: '🔨 Version du bot :',
+        discordVersion: '🔨 Version de discord.js',
+        nodejsVersion: '🔨 Version de NodeJS',
+
+        /* Ram */
+        ramUsing: '📥 Utilisation de la Ram :',
+
+        /* Guild Nmbr */
+        guildNumber: '📊 Nombre de serveurs :',
+
+        /* Command Nmbr */
+        commandNumber: '📊 Nombre de commande :'
 
 }
