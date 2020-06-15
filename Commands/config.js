@@ -90,5 +90,5 @@ module.exports.run = (client, message, args) => {
 module.exports.help = {
     name: "config",
     cooldown: 5,
-    aliases: [""],
+    aliases: ["configuration"],
 }
