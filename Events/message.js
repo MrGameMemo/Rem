@@ -1,21 +1,27 @@
 const Discord = require('discord.js');
 const mysql = require('mysql')
-let cooldown = new Set();
+const cooldowns = new Map();
 const fs = require('fs')
 const owner = require ('../Config/owner')
+const humanizeDuration = require('humanize-duration');
 
 module.exports = (client, message) => {
-
 
     client.con.query(`SELECT prefix FROM guild WHERE id=${message.guild.id}`, (err, rows) => {
     const prefix = rows[0].prefix;
     message.prefix = prefix;
 
     if (message.content.startsWith(prefix)) { 
-        if(cooldown.has(message.author.id)) {
+        if(cooldowns.has(message.author.id, message.content)) {
+            const cooldown = cooldowns.get(message.author.id);
+            const remaining = cooldown - Date.now();
+            const content = cooldowns.get(message.content);
+            if(content === message.content){
             message.delete;
-            message.reply(`Un délai de ${cdseconds} secondes est requis entre chaque exécution`);
+            const msg = client.lang.cooldown.replace(/{cds}/g, `\`${humanizeDuration(remaining, { language: "fr" })}\``)
+            message.reply(`${msg}`);
             return;
+            }
         }
     }
 
@@ -32,16 +38,19 @@ module.exports = (client, message) => {
         if (cmd) { 
             cmd.run(client, message, args);
 
-            console.log(cmd.help.cooldown)
+            //console.log(cmd.help.cooldown)
 
             cdseconds = cmd.help.cooldown
 
             if(message.author.id === owner.id) { return; }
-            cooldown.add(message.author.id);
+            cooldowns.set(message.author.id, Date.now() + cdseconds*1000);
+            cooldowns.set(message.content, prefix + cmd.help.name)
+            console.log(cooldowns)
 
             
             setTimeout(() => {
-                cooldown.delete(message.author.id)
+                cooldowns.delete(message.author.id);
+                cooldowns.delete(message.content);
             }, cdseconds*1000)
         }else {
             return; 
