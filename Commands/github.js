@@ -9,4 +9,5 @@ module.exports.help = {
     name: "github",
     cooldown: 2,
     category: 'other',
+    aliases: [""],
 }

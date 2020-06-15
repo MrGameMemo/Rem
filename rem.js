@@ -10,6 +10,7 @@ let lang = require('./lang/en');
 client.login(token).then(logger.log('Bot On', 'log'))
 
 client.commands = new Discord.Collection();
+client.aliases = new Discord.Collection();
 
 fs.readdir('./Commands/', (error, f) => {
     if (error) { return console.error(error); }
@@ -20,6 +21,9 @@ fs.readdir('./Commands/', (error, f) => {
             let commande = require(`./Commands/${f}`);
             logger.log(`ALL | ${f} commande chargée !`, 'info');
             client.commands.set(commande.help.name, commande);
+            commande.help.aliases.forEach(alias => {
+                client.aliases.set(alias, commande.help.name)
+            });
         });
 });
 
@@ -55,7 +59,7 @@ client.on('guildCreate', guild => {
 client.on('message', message => {
     client.con.query(`SELECT * FROM guild WHERE id=${message.guild.id}`,  (err, rows) => {
     
-        //console.log(rows)
+        ////console.log(rows)
     
         if(rows[0].lang === 'fr') {
             client.lang = require('./lang/fr');

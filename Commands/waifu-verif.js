@@ -32,5 +32,6 @@ module.exports.run = (client, message, args) => {
 }
 module.exports.help = {
     name: "waifu-verif",
-    cooldown: 0
+    cooldown: 0,
+    aliases: [""],
 }

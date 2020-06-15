@@ -7,5 +7,6 @@ module.exports.run = (client, message, args) => {
 
 module.exports.help = {
     name: "goodbye",
-    cooldown: 5
+    cooldown: 5,
+    aliases: [""],
 }

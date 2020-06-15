@@ -10,4 +10,5 @@ module.exports.help = {
     name: "amv",
     cooldown: 3,
     category: 'other',
+    aliases: [""],
 }

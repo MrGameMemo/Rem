@@ -27,4 +27,5 @@ module.exports.help = {
     name: "waifu-list",
     cooldown: 5,
     category: 'waifu',
+    aliases: [""],
 }

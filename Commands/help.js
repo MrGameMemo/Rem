@@ -24,4 +24,5 @@ module.exports.help = {
     name: "help",
     cooldown: 5,
     category: "other",
+    aliases: [""],
 }

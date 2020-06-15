@@ -13,4 +13,5 @@ module.exports.help = {
     name: "set-prefix",
     cooldown: 20,
     category: 'customize',
+    aliases: [""],
 }

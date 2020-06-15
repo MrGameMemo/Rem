@@ -34,4 +34,5 @@ module.exports.help = {
     name: "waifu-vote",
     cooldown: 3600,
     category: 'waifu',
+    aliases: [""],
 }

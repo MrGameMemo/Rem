@@ -22,5 +22,5 @@ module.exports.help = {
     name: "set-lang",
     cooldown: 20,
     category: "customize",
-
+    aliases: [""],
 }

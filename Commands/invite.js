@@ -9,4 +9,5 @@ module.exports.help = {
     name: "invite",
     cooldown: 2,
     category: "ohter",
+    aliases: [""],
 }
