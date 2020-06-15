@@ -26,7 +26,7 @@ module.exports.run = (client, message, args) => {
   
   collector.on('end', collected => {
 
-    console.log(client.lang.waifuTimeOuted);
+    //console.log(client.lang.waifuTimeOuted);
     
   });
 }
