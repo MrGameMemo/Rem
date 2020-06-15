@@ -8,7 +8,7 @@ module.exports.run = (client, message, args) => {
   
   collector.on('collect', m => {
     client.con.query(`SELECT * from waifu WHERE name='${m.content}'`, (err, rows) => {
-        console.log(rows)
+        //console.log(rows)
         if(rows.some(i => i.name.toLowerCase() === m.content.toLowerCase())){
             message.channel.send(`${m.content} est maintenant en supprimé !`)
             client.con.query(`DELETE FROM waifu WHERE name="${m.content}"`)

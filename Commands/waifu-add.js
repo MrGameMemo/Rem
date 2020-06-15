@@ -6,13 +6,19 @@ module.exports.run = (client, message, args) => {
   message.channel.send(client.lang.waifuAddWelc)
   
   collector.on('collect', m => {
-    message.channel.send(`${m.content} est maintenant en vérification ! Merci à toi :))`)
-    client.con.query(`INSERT INTO waifu (name, vote, checked, user, userID, lastName, image, anime, description) VALUES ('${m.content}','0', 'no', '${message.author.username}', '${message.author.id}', '0', '0', '0', '0')`)
-  });
-  
-  collector.on('end', collected => {
-    message.channel.send(client.lang.waifuTimeOuted).then(msg => msg.delete({ timeout: 3000}))
-  });
+
+    client.con.query(`SELECT * from waifu WHERE name='${m.content}' `, (err, rows) => {
+      //console.log(rows)
+      if(rows.some(i => i.name === m.content)){
+        message.channel.send(client.lang.waifuAddExist);
+        return;
+      }else{
+        message.channel.send(`${m.content} est maintenant en vérification ! Merci à toi :))`)
+        client.con.query(`INSERT INTO waifu (name, vote, checked, user, userID, lastName, image, anime, description) VALUES ('${m.content}','0', 'no', '${message.author.username}', '${message.author.id}', '0', '0', '0', '0')`)
+     
+      }
+    })
+ });
 }
 module.exports.help = {
     name: "waifu-add",

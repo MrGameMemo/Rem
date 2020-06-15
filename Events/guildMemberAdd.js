@@ -9,7 +9,7 @@ module.exports = async (client, member, args) => {
         
         WMsg = rows[0].welcomeMsg;
 
-        console.log(wChannel);
+        //console.log(wChannel);
         wChannel = wChannel.replace(/>/g, '');
         wChannel = wChannel.replace(/<#/g, '');
         const channel = member.guild.channels.cache.find(channel => channel.id === wChannel);

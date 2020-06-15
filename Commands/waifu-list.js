@@ -3,9 +3,9 @@ let embed;
 module.exports.run = (client, message, args) => {
 
     client.con.query(`SELECT * from waifu WHERE checked = 'yes' `, (err, rows) => {
-    console.log(rows)
+    //console.log(rows)
         if(!rows[0]){
-            console.log(rows)
+            //console.log(rows)
             embed = new Discord.MessageEmbed()
             .setAuthor(client.lang.waifuListAut)
             .setDescription(`${client.lang.waifuListError}`)

@@ -10,9 +10,6 @@ module.exports.run = (client, message, args) => {
 
     client.con.query(`SELECT * from waifu WHERE name='${args[0]}' `, (err, rows) => {
 
-        if(rows[0].name === m.content.toLowerCase()){
-            message.channel.send(client.lang.waifuAddExist)
-        }
 
     if(rows.some(i => i.name.toLowerCase() === args[0].toLowerCase())){
 
@@ -23,7 +20,7 @@ module.exports.run = (client, message, args) => {
         .setImage(`${rows[0].image}`)
 
         message.channel.send(embed)
-        console.log(rows)
+        //console.log(rows)
     }
     else {
         return message.channel.send(`${client.lang.waifuInfoArgsNotF} ${message.prefix}waifu-add)\``);

@@ -45,7 +45,7 @@ client.con = mysql.createConnection({
 
 client.con.connect(err => {
     if(err) throw err;
-    console.log('Connecté à la db')
+    //console.log('Connecté à la db')
 })
 
 client.on('guildCreate', guild => {

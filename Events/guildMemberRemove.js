@@ -9,7 +9,7 @@ module.exports = async (client, member, args) => {
         
         gMsg = rows[0].goodByeMsg;
 
-        console.log(gChannel);
+        //console.log(gChannel);
         gChannel = gChannel.replace(/>/g, '');
         gChannel = gChannel.replace(/<#/g, '');
         const channel = member.guild.channels.cache.find(channel => channel.id === gChannel);

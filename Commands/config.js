@@ -63,7 +63,7 @@ module.exports.run = (client, message, args) => {
                 
             }else {
             wC = rows[0].welcomeC;
-            console.log(wC)
+            //console.log(wC)
             }
         }
             
