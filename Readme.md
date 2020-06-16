@@ -12,7 +12,4 @@
 
 ### Functionality
 
-- 🏳 Multi language
-- 💾 Open-Source !
-- ❗ Custom Prefix
-- ❔ Support
+On developing ! 
