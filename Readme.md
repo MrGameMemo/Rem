@@ -12,4 +12,4 @@
 
 ### Functionality
 
-On developing ! 
+In development ! 
